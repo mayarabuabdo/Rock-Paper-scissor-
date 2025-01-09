@@ -1,0 +1,35 @@
+body{
+  background-color: black;
+  color: white;
+}
+.header{
+font-size: 30px;
+font-weight: bold;
+}
+.btn{
+padding: 10px;
+  background-color: transparent;
+  color: white;
+  margin-right: 10px;
+
+  border: 3px solid white;
+width: 120px;
+height: 120px;
+border-radius: 50%;
+cursor: pointer;
+}
+.results{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.reset{
+  padding: 10px;
+  cursor: pointer;
+}
+img{
+  width: 60%;
+}
+p img{
+  width: 50px;
+}
