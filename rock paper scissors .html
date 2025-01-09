@@ -3,18 +3,28 @@
   <head>
   <title> Rock paper Scissors </title>
   <meat charset="utf-8">
+    <link href="rock.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
 <body>
-  <p>Rock Paper Scissors</p>
-<button onclick="player='Rock';  game(); updateresult(); ">Rock</button>
-<button onclick="player='Paper';  game(); updateresult();">Paper</button>
-<button onclick="player='Scissor';  game(); updateresult();">Scissor</button>
-<p class="results"></p>
+  <p class="header">Rock Paper Scissors</p>
+<button class="btn" onclick="player='Rock';  game(); updateresult(); ">
+  <img src="rock.png">
+</button>
+<button class="btn" onclick="player='Paper';  game(); updateresult();">
+  <img src="paper.png">
+</button>
+<button class="btn" onclick="player='Scissors';  game(); updateresult();">
+  <img src="scissors.png">
+</button>
+<p class="results">
+  
+</p>
 <p class="picked"></p>
 <p class="score2"></p>
-<button onclick="score.Win=0;score.Lose=0; score.Tie=0; rest();" >Reset Score</button>
+<button class="reset" onclick="score.Win=0;score.Lose=0; score.Tie=0; rest();" >Reset Score</button>
+
 
 
 <script>
@@ -64,7 +74,7 @@ localStorage.setItem('score1',JSON.stringify(score));
 
   }
   else{
-   computer ='Scissor';  
+   computer ='Scissors';  
    if(player==="Rock"){
 result='Win';
 score.Win+=1;
@@ -84,7 +94,14 @@ else{
 
 
 function updateresult(){
-  document.querySelector('.picked').innerHTML=`you ${player} ---  computer ${computer}`;
+  document.querySelector('.picked').innerHTML=`
+  You
+  ${player}
+  <img src="${player}.png">
+  
+  <img src="${computer}.png">
+  ${computer}
+  Computer`;
   document.querySelector('.results').innerHTML=`you ${result} .`;
   document.querySelector('.score2').innerHTML=`Win:${score.Win},     Lose:${score.Lose},       Tie:${score.Tie}`;
 }
